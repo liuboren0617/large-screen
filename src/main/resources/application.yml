@@ -1,0 +1,21 @@
+spring:
+    application:
+        name: large-screen
+    profiles:
+        active: local
+
+server:
+    port: 8081
+    shutdown: graceful
+    undertow:
+        max-http-post-size: 0
+        direct-buffers: true
+        buffer-size: 1024
+        threads:
+            io: 4
+            worker: 320
+needle:
+    api:
+        manage:
+            enable: true
+            basePackage: org.example.large.screen.facade
